@@ -23,12 +23,12 @@ function products() {
       .map(
         (product) => `
         <div class="product-card">
-          <img src="${product.image}" alt="${product.title}" />
+          <img src="${product.image}" alt="${product.title}" class="product-image" />
           <h3>${product.title}</h3>
           <p class="description">${product.description}</p>
           <div class="product-footer">
             <p class="price">$${product.price}</p>
-            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+            <button class="add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
           </div>
         </div>
       `
