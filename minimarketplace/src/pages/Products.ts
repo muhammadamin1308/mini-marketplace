@@ -34,6 +34,30 @@ function products() {
       `
       )
       .join("");
+
+    attachCartListeners(products);
+  }
+
+  function attachCartListeners(products: Product[]) {
+    const buttons = document.querySelectorAll('.add-to-cart-btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const target = e.target as HTMLButtonElement;
+        const productId = parseInt(target.dataset.id || '0');
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+          window.dispatchEvent(new CustomEvent('addToCart', { detail: product }));
+
+          target.textContent = 'Added!';
+          target.classList.add('added');
+          setTimeout(() => {
+            target.textContent = 'Add to Cart';
+            target.classList.remove('added');
+          }, 1000);
+        }
+      });
+    });
   }
 
   if (document.readyState === "loading") {

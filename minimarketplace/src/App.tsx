@@ -4,7 +4,6 @@ import Cart from "./pages/Cart";
 
 function App() {
   useEffect(() => {
-    // Dynamic import to avoid Vite processing issues
     import("./pages/Products.ts");
   }, []);
 

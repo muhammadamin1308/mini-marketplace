@@ -20,3 +20,139 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+.cart {
+  padding: 20px;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-details h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+}
+
+.cart-item-price {
+  color: #666;
+  margin: 0;
+}
+
+.cart-item-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.quantity-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.quantity-controls button:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.quantity-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity-controls span {
+  min-width: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.remove-btn {
+  padding: 6px 12px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove-btn:hover {
+  background: #cc0000;
+}
+
+.cart-item-subtotal {
+  font-weight: bold;
+  font-size: 18px;
+  min-width: 80px;
+  text-align: right;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  padding: 20px;
+  border-top: 2px solid #333;
+  text-align: right;
+}
+
+.cart-summary h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 18px;
+}
+
+.add-to-cart-btn {
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn.added {
+  background: #4CAF50;
+  color: white;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.add-to-cart-btn:active {
+  transform: translateY(0);
+}
