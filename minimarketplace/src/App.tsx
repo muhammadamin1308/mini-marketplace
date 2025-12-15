@@ -1,19 +1,37 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Cart from "./pages/Cart";
-import Products from "./pages/Products";
-import Home from "./pages/Home";
+import { useEffect } from "react";
+// import Home from "./pages/Home";
 
 function App() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "pages/Products.ts";
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
-    <Router>
-      <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/products" element={<Products />} />
-      </Routes>
-    </Router>
+    <div className="app">
+      <header>
+        <nav>
+          <h2>This is nav</h2>
+        </nav>
+      </header>
+      <main>
+        <section className="products-section">
+          <h1>Products</h1>
+        </section>
+        <section className="cart-section">
+          <Cart />
+        </section>
+      </main>
+    </div>
   );
 }
 
