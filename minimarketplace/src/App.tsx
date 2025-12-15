@@ -6,7 +6,7 @@ import { useEffect } from "react";
 function App() {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "pages/Products.ts";
+    script.src = "src/pages/Products.ts";
     document.body.appendChild(script);
 
     return () => {
@@ -19,9 +19,7 @@ function App() {
   return (
     <div className="app">
       <header>
-        <nav>
-          <h2>This is nav</h2>
-        </nav>
+          <h2>Click - Mini Marketplace</h2>
       </header>
       <main>
         <section className="products-section">
